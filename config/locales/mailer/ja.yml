@@ -1,0 +1,9 @@
+ja:
+  user_mailer:
+    account_activation:
+      subject: "アカウント本登録"
+    password_reset:
+      subject: "パスワード再設定"
+  contact_mailer:
+    contact_email:
+      subject: "%{user}様からお問い合わせ"

@@ -1,0 +1,6 @@
+ja:
+  account_activations:
+    edit:
+      flash:
+        success: "ようこそ5Keepsへ!  アカウントの本登録が完了しました！"
+        danger: "リンクが正しくない、または既に本登録が完了しています。"

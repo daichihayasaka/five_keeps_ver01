@@ -1,0 +1,6 @@
+<p><%= @user.name %>様</p>
+
+<p>5Keepsに仮登録いただき、ありがとうございます。以下のリンクより本登録を完了させてください。</p>
+
+<%= link_to edit_account_activation_url(@user.activation_token, email: @user.email, locale: I18n.locale),
+                  edit_account_activation_url(@user.activation_token, email: @user.email, locale: I18n.locale) %>

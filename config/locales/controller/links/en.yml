@@ -1,0 +1,8 @@
+en:
+  links:
+    create:
+      flash:
+        danger: "Title and URL can't be blank"
+    count_link:
+      flash:
+        danger: "Links can't be more than %{num}"

@@ -1,0 +1,6 @@
+<%#■フラッシュを初期化  %>
+document.getElementById('flash').innerHTML = '<%= j(render 'layouts/flash') %>';
+
+document.getElementById('edit-link-modal').classList.add('hidden');
+document.getElementById('mask-modal').classList.add('hidden')
+document.getElementById('link-<%= @link.id %>').outerHTML = '';

@@ -1,0 +1,70 @@
+<%#■フラッシュを初期化  %>
+document.getElementById('flash').innerHTML = '<%= j(render 'layouts/flash') %>';
+
+<%#■モーダル、マスクを閉じる => クリックしたグループを非表示  %>
+document.getElementById('edit-group-modal').classList.add('hidden');
+document.getElementById('mask-modal').classList.add('hidden')
+document.querySelectorAll('.link_group-<%= @link_group.id %>').forEach(linkGroup => {
+  linkGroup.outerHTML = '';
+});
+
+<%#■editGroupModalの中身を削除 %>
+document.querySelector('#edit-group-modal #link_group_name').value = '';
+
+<%#■Homeのページに移動したように偽装  %>
+<%#・homeのactiveクラスを付与 %>
+document.querySelectorAll('.home').forEach(home => {
+  home.classList.add('active');
+});
+
+<%#・addLinkフォームの非表示、addGroupフォームの表示 %>
+document.getElementById('add-link').classList.add('hidden');
+document.getElementById('add-group').classList.remove('hidden');
+
+<%#・全てのLinkを取得 => 表示 %>
+document.querySelector('.link').innerHTML = '<%= j(render @links) %>';
+
+<%#■全てのLinkにイベントを追加 %>
+<%# => これがないと、取得した全てのLinkで、イベントが発生しない %>
+var editLinkIcons = document.querySelectorAll('.link .edit-icon');
+var editLinkModal = document.getElementById('edit-link-modal');
+var maskModal = document.getElementById('mask-modal');
+<%# linkのedit-iconをクリック %>
+editLinkIcons.forEach(icon => {
+  icon.addEventListener('click', () => {
+    // editLinkModal/ maskModalの表示
+    editLinkModal.classList.remove('hidden');
+    maskModal.classList.remove('hidden');
+
+    // クリックされたedit-iconのdata-id, data-titleを取得
+    var id = icon.dataset.id;
+    var title = icon.dataset.title;
+    var url = icon.dataset.url;
+
+    // editLinkModalのURLに代入する (Update用)
+    editLinkModal.setAttribute('action', `links/${id}`);
+
+    // delete-iconのURLに代入する (Delete用)
+    var deleteIcon = document.querySelector('#edit-link-modal .delete-icon');
+    deleteIcon.setAttribute('href', `links/${id}`);
+
+    // editLinkModalの中身にtitleとurlに代入する
+    document.querySelector('#edit-link-modal #link_title').value = title;
+    document.querySelector('#edit-link-modal #link_url').value = url;
+  });
+});
+
+<%#■link_goupにイベントをセット  %>
+var editGroupIcons = document.querySelectorAll('.group .edit-icon');
+var editGroupModal = document.getElementById('edit-group-modal');
+
+<%# link_groupのedit-iconをクリック %>
+editGroupIcons.forEach(icon => {
+  icon.addEventListener('click', () => {
+    // クリックされたedit-iconのdata-nameを取得
+    var name = icon.dataset.name;
+
+    // editGroupModalの中身にnameを代入する
+    document.querySelector('#edit-group-modal #link_group_name').value = name;
+  });
+});

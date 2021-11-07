@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "確認用のパスワード"
+      contact:
+        name: "名前"
+        email: "メールアドレス"
+        message: "メッセージ"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: "の書式が正しくありません"
+        contact:
+          attributes:
+            email:
+              invalid: "の書式が正しくありません"

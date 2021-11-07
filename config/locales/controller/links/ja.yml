@@ -1,0 +1,8 @@
+ja:
+  links:
+    create:
+      flash:
+        danger: "タイトルとURLを入力してください。"
+    count_link:
+      flash:
+        danger: "リンクは%{num}つまでしか作成できません。"

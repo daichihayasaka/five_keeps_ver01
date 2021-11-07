@@ -1,0 +1,6 @@
+ja:
+  sessions:
+    create:
+      flash:
+        warning: "本登録が完了しておりません。メールをご確認ください。"
+        danger: "メールまたはパスワードが正しくありません。"

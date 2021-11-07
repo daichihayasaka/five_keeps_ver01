@@ -1,0 +1,5 @@
+ja:
+  contacts:
+    create:
+      flash:
+        info: "メッセージが送信されました。"

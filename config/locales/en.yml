@@ -1,0 +1,21 @@
+en:
+  dictionary:
+    common:
+      login: "Login"
+      signup: "Signup"
+      search: "Search"
+      new_group: "New Group"
+      group_name: "Group Name"
+      new_link: "New Link"
+      link_title: "Title"
+      create: "Create!"
+      update: "Update"
+    delete_group:
+      message: "Are you sure to delete this group with associated links?"
+    delete_link:
+      message: "Are you sure to delete this link?"
+    footer:
+      home: "Home"
+      contact: "Contact"
+      terms: "Terms"
+      privacy: "Privacy"

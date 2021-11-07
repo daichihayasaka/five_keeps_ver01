@@ -1,0 +1,50 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+rails_tutorial:
+  title: "Rails Tutorial"
+  url: "url"
+  updated_at: <%= 10.minutes.ago %>
+  user: michael
+  link_group: rails
+
+active_record:
+  title: "Active Record"
+  url: "url"
+  updated_at: <%= 9.minutes.ago %>
+  user: michael
+  link_group: rails
+
+asset_pipeline:
+  title: "Asset Pipeline"
+  url: "url"
+  updated_at: <%= 8.minutes.ago %>
+  user: michael
+  link_group: rails
+
+validation:
+  title: "Validation"
+  url: "url"
+  updated_at: <%= 7.minutes.ago %>
+  user: michael
+  link_group: rails
+
+i18n:
+  title: "i18n"
+  url: "url"
+  updated_at: <%= 6.minutes.ago %>
+  user: michael
+  link_group: rails
+
+dom:
+  title: "DOM"
+  url: "url"
+  updated_at: <%= 2.hours.ago %>
+  user: archer
+  link_group: javascript
+
+most_recent:
+  title: "MySQL"
+  url: "url"
+  updated_at: <%= Time.zone.now %>
+  user: michael
+  link_group: most_recent

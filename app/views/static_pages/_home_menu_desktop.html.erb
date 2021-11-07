@@ -1,0 +1,13 @@
+<section class="menu desktop">
+  <nav>
+    <ul class="menu-list">
+      <li class="active home">
+        <span class="material-icons">home</span>
+        <%= link_to t("static_pages.home.menu.home"),  root_path, data: { remote: true} %>
+      </li>
+      <% if current_user.link_groups.any? %>
+        <%= render @link_groups %>
+      <% end %>
+    </ul>
+  </nav>
+</section><!-- /.menu.desktop -->

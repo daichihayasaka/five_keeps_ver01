@@ -1,0 +1,10 @@
+ja:
+  sessions:
+    new:
+      title: "ログイン"
+      h1: "ログイン"
+      forgot_password: "パスワードを忘れた方はこちら"
+      remember_me: "次回から自動でログイン"
+      button: "ログイン"
+      message_to_signup: "アカウントをお持ちでないですか？"
+      link_to_signup: "新規登録"

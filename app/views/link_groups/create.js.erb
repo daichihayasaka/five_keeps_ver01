@@ -1,0 +1,120 @@
+<%#■フラッシュを初期化  %>
+document.getElementById('flash').innerHTML = '<%= j(render 'layouts/flash') %>';
+
+<%#■「ul.menu-list」の最後に、新たに追加したグループを表示  %>
+document.querySelectorAll('.menu-list').forEach(list => {
+  list.insertAdjacentHTML('beforeend', '<%= j(render @link_group) %>');
+});
+
+<%#■addGroupの中身を削除  %>
+document.querySelector('#add-group #link_group_name').value = '';
+
+<%#■新たに追加したグループのページに移動したように偽装  %>
+<%#◉「.link」の中身を空にする  %>
+document.querySelector('.link').innerHTML = '';
+
+<%#◉新たに追加したグループにactiveクラスを追加  %>
+document.querySelectorAll('.link_group-<%= @link_group.id %>').forEach(linkGroup => {
+  linkGroup.classList.add('active');
+});
+
+<%#◉新たに追加したグループのedit-iconを表示(Mobileのみ)  %>
+var mobileLinkGroup = document.querySelector('.menu.mobile .link_group-<%= @link_group.id %>')
+mobileLinkGroup.lastElementChild.classList.remove('hidden');
+
+<%#◉homeのactiveクラスを削除 %>
+document.querySelectorAll('.home').forEach(home => {
+  home.classList.remove('active');
+});
+
+<%#◉addLinkフォームの表示、addGroupフォームの非表示 %>
+document.getElementById('add-link').classList.remove('hidden');
+document.getElementById('add-group').classList.add('hidden');
+
+<%#■addLinkのvalueにlink_group_idをセット  %>
+document.getElementById('link_link_group_id').setAttribute("value", <%= @link_group.id %>);
+
+<%#■新たに追加した要素にクラスやイベントを追加 ・削除 %>
+<%#◉クリックされたメニューにactiveクラスを追加し、その他は削除する %>
+var menuItems = document.querySelectorAll('.menu-list li');
+menuItems.forEach(clickedItem => {
+  clickedItem.addEventListener('click', () => {
+    menuItems.forEach(activatedItem => {
+      activatedItem.classList.remove('active');
+    });
+    clickedItem.classList.add('active');
+  });
+});
+
+<%#◉edit-iconの表示/非表示 %>
+<%#・Mobile %>
+var mobileEditGroupIcons = document.querySelectorAll('.menu.mobile .group .edit-icon');
+var mobileGroupLists = document.querySelectorAll('.menu.mobile .group');
+var mobileHome = document.querySelector('.menu.mobile .home');
+<%#Groupをクリック => クリックしたGroupのedit-iconを表示%>
+  mobileGroupLists.forEach(list => {
+    list.addEventListener('click', () => {
+      mobileEditGroupIcons.forEach(icon => {
+        icon.classList.add('hidden');
+      });
+      var clickedListIcon = list.lastElementChild;
+      clickedListIcon.classList.remove('hidden');
+    });
+  });
+<%#Homeをクリック => Groupのedit-iconを非表示%>
+  mobileHome.addEventListener('click', () => {
+    mobileEditGroupIcons.forEach(icon => {
+      icon.classList.add('hidden');
+    });
+  });
+
+<%#・Desktop %>
+<%#Groupをmouse-hover/ mouse-out => edit-iconの表示/ 非表示 %>
+document.querySelectorAll('.menu.desktop .group').forEach(list => {
+  list.addEventListener('mouseover', () => {
+    list.lastElementChild.classList.remove('hidden');
+  });
+  list.addEventListener('mouseout', () => {
+    list.lastElementChild.classList.add('hidden');
+  });
+});
+
+<%#◉edit-iconをクリックした時のイベント %>
+var editGroupIcons = document.querySelectorAll('.group .edit-icon');
+var editGroupModal = document.getElementById('edit-group-modal');
+var maskModal = document.getElementById('mask-modal');
+
+<%# groupのedit-iconをクリック %>
+editGroupIcons.forEach(icon => {
+  icon.addEventListener('click', () => {
+    // editGroupModal/ maskModalの表示
+    editGroupModal.classList.remove('hidden');
+    maskModal.classList.remove('hidden');
+
+    // クリックされたedit-iconのdata-id, data-nameを取得
+    var id = icon.dataset.id;
+    var name = icon.dataset.name;
+
+    // editGroupModalのURLに代入する (Update用) => これがないと更新できない
+    editGroupModal.setAttribute('action', `link_groups/${id}`);
+
+    // delete-iconのURLに代入する (Delete用)
+    var deleteIcon = document.querySelector('#edit-group-modal .delete-icon');
+    deleteIcon.setAttribute('href', `link_groups/${id}`);
+
+    // editGroupModalの中身にnameを代入する
+    document.querySelector('#edit-group-modal #link_group_name').value = name;
+  });
+});
+
+<%#◉「.group」をクリックした時のイベント %>
+var groupLists = document.querySelectorAll('.group');
+var addLink = document.getElementById('add-link');
+var addGroup = document.getElementById('add-group');
+<%#addLinkフォームの表示、addGroupフォームの非表示 %>
+groupLists.forEach(list => {
+  list.addEventListener('click', () => {
+    addLink.classList.remove('hidden');
+    addGroup.classList.add('hidden');
+  });
+});

@@ -1,0 +1,14 @@
+en:
+  users:
+    create:
+      flash:
+        info: "Please check your email to activate your account."
+    create_guest:
+      flash:
+        success: "Welcome to the 5Keeps!"
+    update:
+      flash:
+        success: "Your profile is successfully updated."
+    destroy:
+      flash:
+        success: "Your account is successfully deleted."

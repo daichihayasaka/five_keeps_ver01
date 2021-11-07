@@ -1,0 +1,44 @@
+<div class="home-container">
+  <div id="mask-modal" class="hidden"></div>
+
+  <div class="header-outer">
+    <header class="guest-header">
+      <div class="humbugger">
+        <span class="material-icons" id="open-mobile-menu">menu</span>
+      </div>
+      <div class="logo">
+        <%= link_to image_tag("5keeps.png", alt: "logo"), root_path %>
+      </div>
+      <%= render 'static_pages/search_form' %>
+      <div class="links-guest">
+        <div class="account">
+          <span class="material-icons" id="account-icon">account_circle</span>
+          <span class="user-name"><%= t "static_pages.guest.guest" %></span>
+        </div>
+        <%= link_to t("dictionary.common.signup"), signup_path, class: "button" %>
+      </div>
+    </header>
+  </div class="header-outer">
+
+  <main class="home-main">
+    <%= render 'static_pages/home_menu_mobile' %>
+    <%= render 'static_pages/home_menu_desktop' %>
+    <%= render 'static_pages/edit_group_modal' %>
+    <%= render 'static_pages/edit_link_modal' %>
+    <section class="home-content">
+      <%= render 'static_pages/add_group' %>
+      <%= render 'static_pages/add_link' %>
+      <ul class="link">
+        <% if current_user.links.any? %>
+          <%= render @links %>
+        <% end %>
+      </ul>
+    </section>
+    <div id="mask-mobile-menu" class="hidden">
+      <span class="material-icons" id="close-mobile-menu">close</span>
+    </div>
+  </main>
+
+  <%= render 'static_pages/footer' %>
+</div><!-- /.home-container -->
+<%= javascript_pack_tag 'custom/guest' %>

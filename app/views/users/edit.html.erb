@@ -1,0 +1,50 @@
+<% provide(:title,t('.title')) %>
+<div class="form-container">
+  <div id="mask-modal" class="hidden"></div>
+
+  <div id="delete-user-modal" class="hidden">
+    <h1><%= t(".delete_user.h1") %></h1>
+    <div class="caution">
+      <h2><%= t(".delete_user.h2") %></h2>
+      <div class="msg">
+        <span class="material-icons">error_outline</span>
+        <p><%= t(".delete_user.message") %></p>
+      </div>
+    </div>
+    <%= link_to t(".delete_user.button"), @user,
+                                                    id: "delete-user",
+                                                    class: "button",
+                                                    method: :delete,
+                                                    data: { confirm: t(".delete_user.confirm") }  %>
+  </div>
+
+  <section class="logo form">
+    <%= link_to image_tag("5keeps.png", alt: "logo"), root_path %>
+  </section>
+
+  <section class="form-main">
+    <h1><%= t(".h1") %></h1>
+      <%= render 'shared/error_messages' %>
+    <%= form_with(model: @user, local: true, class: "user-form") do |f| %>
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control'  %>
+      </div>
+      <div>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control'  %>
+      </div>
+      <div>
+        <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation) %>
+        <%= f.password_field :password_confirmation, class: 'form-control'  %>
+      </div>
+      <%= f.submit t('.update'), class: "button" %>
+    <% end %>
+    <div class="link-to-delete">
+      <span id="delete-link"><%= t(".delete_link") %></span>
+    </div>
+  </section>
+
+  <%= render 'static_pages/footer' %>
+</div>
+<%= javascript_pack_tag 'custom/edit' %>

@@ -1,0 +1,5 @@
+en:
+  application:
+    logged_in_user:
+      flash:
+        danger: "Please log in."

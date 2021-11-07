@@ -1,0 +1,8 @@
+en:
+  link_groups:
+    count_link_group:
+      flash:
+        danger: "Groups can't be more than %{num}"
+    validation_link_group:
+      flash:
+        danger: "Group name can't be blank"

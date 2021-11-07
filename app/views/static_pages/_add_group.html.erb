@@ -1,0 +1,5 @@
+<%= form_with(model: @link_group, local: false, id: "add-group") do |f| %>
+  <div class="title"><%= t "dictionary.common.new_group" %></div>
+  <%= f.text_field :name, placeholder: t("dictionary.common.group_name"), class: "hidden" %>
+  <%= f.submit t("dictionary.common.create"), class: "button hidden" %>
+<% end %>

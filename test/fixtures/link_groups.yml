@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+rails:
+  name: "Rails"
+  created_at: <%= 10.minutes.ago %>
+  user: michael
+
+css:
+  name: "CSS"
+  created_at: <%= 3.years.ago %>
+  user: michael
+
+javascript:
+  name: "JavaScript"
+  created_at: <%= 2.hours.ago %>
+  user: archer
+
+java:
+  name: "Java"
+  created_at: <%= 3.hours.ago %>
+  user: michael
+
+php:
+  name: "PHP"
+  created_at: <%= 30.minutes.ago %>
+  user: michael
+
+most_recent:
+  name: "SQL"
+  created_at: <%= Time.zone.now %>
+  user: michael

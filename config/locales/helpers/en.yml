@@ -1,0 +1,7 @@
+en:
+  helpers:
+    description: '5Keeps is the free service to bookmark websites. It provides you a fast access to the websites you need right now. you can input information efficiently in your spare time.'
+    ogp:
+      title: '5Keeps | Simple bookmark app'
+      description: '5Keeps is the free service to bookmark websites. It provides you a fast access to the websites you need right now. you can input information efficiently in your spare time.'
+      image: '5Keeps_ogp_en.png'

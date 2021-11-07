@@ -1,0 +1,41 @@
+<%#■モーダル、マスクを閉じる%>
+if ( document.getElementById('edit-link-modal') !== null ) {
+document.getElementById('edit-link-modal').classList.add('hidden');
+document.getElementById('mask-modal').classList.add('hidden')
+}
+
+if ( document.getElementById('edit-group-modal') !== null ) {
+document.getElementById('edit-group-modal').classList.add('hidden');
+document.getElementById('mask-modal').classList.add('hidden')
+}
+
+<%#■editGroupIconsにイベントをセット  %>
+var editGroupIcons = document.querySelectorAll('.group .edit-icon');
+
+<%# link_groupのedit-iconをクリック %>
+editGroupIcons.forEach(icon => {
+  icon.addEventListener('click', () => {
+    // クリックされたedit-iconのdata-nameを取得
+    var name = icon.dataset.name;
+    // editGroupModalの中身にnameを代入する
+    document.querySelector('#edit-group-modal #link_group_name').value = name;
+  });
+});
+
+<%#■editLinkIconsにイベントをセット   %>
+var editLinkIcons = document.querySelectorAll('.link .edit-icon');
+
+<%# linkのedit-iconをクリック %>
+editLinkIcons.forEach(icon => {
+  icon.addEventListener('click', () => {    
+    // クリックされたedit-iconのdata-title, data-urlを取得
+    var title = icon.dataset.title;
+    var url = icon.dataset.url;
+    // editLinkModalの中身にtitleとurlに代入する
+    document.querySelector('#edit-link-modal #link_title').value = title;
+    document.querySelector('#edit-link-modal #link_url').value = url;
+  });
+});
+
+<%#■フラッシュを表示%>
+document.getElementById('flash').innerHTML = '<%= j(render 'layouts/flash') %>';

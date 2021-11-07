@@ -1,0 +1,10 @@
+en:
+  sessions:
+    new:
+      title: "Login"
+      h1: "Log in"
+      forgot_password: "Forgot password?"
+      remember_me: "Remember me on this computer"
+      button: "Log in"
+      message_to_signup: "New to 5Keeps?"
+      link_to_signup: "Sign up now!"

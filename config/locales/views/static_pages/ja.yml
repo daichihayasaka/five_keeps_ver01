@@ -1,0 +1,10 @@
+ja:
+  static_pages:
+    home:
+      language: "言語"
+      menu:
+        home: "ホーム"
+      settings: "設定"
+      logout: "ログアウト"
+    guest:
+      guest: "ゲスト"

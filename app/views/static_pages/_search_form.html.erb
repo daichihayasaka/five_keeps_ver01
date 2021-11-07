@@ -1,0 +1,7 @@
+<%= form_with url: search_path, method: :get, local: false, class: "search-form" do |f| %>
+  <div class="search-icon">
+    <span class="material-icons" id="search">search</span>
+  </div>
+  <%= f.text_field :title, placeholder: t("dictionary.common.search") %>
+  <%= f.submit "", style: "display: none" %>
+<% end %>

@@ -1,0 +1,28 @@
+<% provide(:title, t('.title')) %>
+<div class="form-container">
+  <section class="logo form">
+    <%= link_to image_tag("5keeps.png", alt: "logo"), root_path %>
+  </section>
+
+  <section class="form-main">
+    <h1><%= t('.h1') %></h1>
+      <%= render 'shared/error_messages' %>
+    <%= form_with(model: @user,
+                            url: password_reset_path(params[:id]),
+                            local: true,
+                            class: "user-form") do |f| %>
+      <%= hidden_field_tag :email, @user.email %>
+      <div>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control'  %>
+      </div>
+      <div>
+        <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation) %>
+        <%= f.password_field :password_confirmation, class: 'form-control'  %>
+      </div>
+      <%= f.submit t('.button'), class: "button" %>
+    <% end %>
+  </section>
+
+  <%= render 'static_pages/footer' %>
+</div>

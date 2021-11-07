@@ -1,0 +1,10 @@
+ja:
+  password_resets:
+    new:
+      title: "パスワードをお忘れの場合"
+      h1: "パスワードをお忘れの場合"
+      button: "再設定の方法を送信"
+    edit:
+      title: "パスワード再設定"
+      h1: "パスワード再設定"
+      button: "新しいパスワードを保存"

@@ -1,0 +1,17 @@
+en:
+  users:
+    new:
+      title: "Signup"
+      h1: "Signup to 5Keeps"
+      signup: "Sign Up"
+    edit:
+      title: "Setting"
+      h1: "Update your profile"
+      update: "Update"
+      delete_link: "Do you want to delete an account?"
+      delete_user:
+        h1: "Delete your account"
+        h2: "Make sure to check before deleting"
+        message: "You will loose all the groups and links associated with your account."
+        button: "Delete your account"
+        confirm: "Are you sure?"

@@ -1,0 +1,37 @@
+<section class="menu mobile">
+  <header class="menu-header">
+    <div class="logo">
+      <%= link_to image_tag("5keeps.png", alt: "logo"), root_path %>
+    </div>
+    <% if current_user.guest? %>
+      <div class="links-guest">
+        <div class="account">
+          <span class="material-icons" id="account-icon">account_circle</span>
+          <span class="user-name"><%= t "static_pages.guest.guest" %></span>
+        </div>
+        <%= link_to t("dictionary.common.signup"), signup_path, class: "button" %>
+      </div>
+    <% else %>
+      <div class="account">
+        <span class="material-icons" id="account-icon">account_circle</span>
+        <span class="user-name"><%= current_user.name %></span>
+        <span class="material-icons" id="dropdown-icon">arrow_drop_down</span>
+        <ul class="dropdown-list">
+          <li><%= link_to t('static_pages.home.settings'), edit_user_path(current_user) %></li>
+          <li><%= link_to t('static_pages.home.logout'), logout_path, method: :delete %></li>
+        </ul>
+      </div>
+    <% end %>
+  </header>
+  <nav>
+    <ul class="menu-list">
+      <li class="active home">
+        <span class="material-icons">home</span>
+        <%= link_to t("static_pages.home.menu.home"),  root_path, data: { remote: true} %>
+      </li>
+      <% if current_user.link_groups.any? %>
+        <%= render @link_groups %>
+      <% end %>
+    </ul>
+  </nav>
+</section><!-- /.menu.mobile -->

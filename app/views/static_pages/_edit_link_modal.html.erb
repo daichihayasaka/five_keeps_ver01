@@ -1,0 +1,17 @@
+<%= form_with(scope: :link, method: :patch,
+                                          local: false,
+                                          class: "hidden",
+                                          id: "edit-link-modal") do |f| %>
+  <div class="link-header">
+    <%= f.text_field :title %>
+    <%= f.submit t("dictionary.common.update"), class: "button hidden" %>
+    <%= link_to "", class: "delete-icon",
+                        method: :delete,
+                        data: { confirm:  t("dictionary.delete_link.message"), remote: true} do %>
+      <span class="material-icons" style="font-size: 20px;">delete_outline</span>
+    <% end %>
+  </div>
+  <div class="link-url">
+    <%= f.text_field :url %>
+  </div>
+<% end %>

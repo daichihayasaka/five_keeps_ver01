@@ -1,0 +1,21 @@
+ja:
+  dictionary:
+    common:
+      login: "ログイン"
+      signup: "無料登録"
+      search: "検索"  
+      new_group: "新規グループ"
+      group_name: "グループ名"
+      new_link: "新規リンク"
+      link_title: "タイトル"
+      create: "作成"
+      update: "保存"
+    delete_group:
+      message: "グループ内のリンクも全て削除されます。本当に削除しますか？"
+    delete_link:
+      message: "本当に削除しますか？"
+    footer:
+      home: "ホーム"
+      contact: "お問い合わせ"
+      terms: "利用規約"
+      privacy: "プライバシー"

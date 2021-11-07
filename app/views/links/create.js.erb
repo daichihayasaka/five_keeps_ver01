@@ -1,0 +1,39 @@
+<%#■フラッシュを初期化  %>
+document.getElementById('flash').innerHTML = '<%= j(render 'layouts/flash') %>';
+
+<%#■「ul.link」の最後に、新たに追加したリンクを表示  %>
+document.querySelector('.link').insertAdjacentHTML('beforeend', '<%= j(render @link) %>');
+
+<%#■addLinkの中身を削除  %>
+document.querySelector('#add-link #link_title').value = '';
+document.querySelector('#add-link #link_url').value = '';
+
+<%#■新たに追加した要素にイベントを追加 %>
+var editLinkIcons = document.querySelectorAll('.link .edit-icon');
+var editLinkModal = document.getElementById('edit-link-modal');
+var maskModal = document.getElementById('mask-modal');
+<%#◉edit-iconをクリックした時のイベント %>
+<%# linkのedit-iconをクリック %>
+editLinkIcons.forEach(icon => {
+  icon.addEventListener('click', () => {
+    // editLinkModal/ maskModalの表示
+    editLinkModal.classList.remove('hidden');
+    maskModal.classList.remove('hidden');
+
+    // クリックされたedit-iconのdata-id, data-titleを取得
+    var id = icon.dataset.id;
+    var title = icon.dataset.title;
+    var url = icon.dataset.url;
+
+    // editLinkModalのURLに代入する (Update用)
+    editLinkModal.setAttribute('action', `links/${id}`);
+
+    // delete-iconのURLに代入する (Delete用)
+    var deleteIcon = document.querySelector('#edit-link-modal .delete-icon');
+    deleteIcon.setAttribute('href', `links/${id}`);
+
+    // editLinkModalの中身にtitleとurlに代入する
+    document.querySelector('#edit-link-modal #link_title').value = title;
+    document.querySelector('#edit-link-modal #link_url').value = url;
+  });
+});

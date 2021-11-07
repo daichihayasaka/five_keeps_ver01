@@ -1,0 +1,10 @@
+en:
+  static_pages:
+    home:
+      language: "Language"
+      menu:
+        home: "home"
+      settings: "Settings"
+      logout: "Log out"
+    guest:
+      guest: "Guest"

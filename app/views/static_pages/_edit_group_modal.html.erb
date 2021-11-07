@@ -1,0 +1,14 @@
+<%= form_with(scope: :link_group, method: :patch,
+                                                    local: false,
+                                                    class: "hidden",
+                                                    id: "edit-group-modal") do |f| %>
+  <div class="group-header">
+    <%= f.text_field :name  %>
+    <%= f.submit t("dictionary.common.update"), class: "button hidden" %>
+    <%= link_to "", class: "delete-icon",
+          method: :delete,
+          data: { confirm:  t("dictionary.delete_group.message"), remote: true} do %>
+      <span class="material-icons" style="font-size: 20px;">delete_outline</span>
+    <% end %>
+  </div>
+<% end %>

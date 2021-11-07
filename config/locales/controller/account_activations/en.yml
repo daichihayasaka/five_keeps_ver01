@@ -1,0 +1,6 @@
+en:
+  account_activations:
+    edit:
+      flash:
+        success: "Welcome to the 5Keeps!"
+        danger: "Invalid activation link or your account already activated"

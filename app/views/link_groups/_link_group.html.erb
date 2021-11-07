@@ -1,0 +1,10 @@
+<li class="group link_group-<%= link_group.id %>" >
+  <span class="material-icons" style="font-size: 20px;">bookmarks</span>
+  <%= link_to link_group.name,  link_group, data: { remote: true} %>
+  <span class="material-icons edit-icon  hidden"
+            style="font-size: 20px;"
+            data-id="<%= link_group.id %>"
+            data-name="<%= link_group.name %>">
+    edit
+  </span>
+</li>

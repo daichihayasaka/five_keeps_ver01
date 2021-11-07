@@ -1,0 +1,5 @@
+en:
+  contacts:
+    create:
+      flash:
+        info: "Your message is successfully sent."

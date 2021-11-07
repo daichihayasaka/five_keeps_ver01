@@ -1,0 +1,8 @@
+ja:
+  link_groups:
+    count_link_group:
+      flash:
+        danger: "グループは%{num}つまでしか作成できません。"
+    validation_link_group:
+      flash:
+        danger: "グループ名を入力してください。"

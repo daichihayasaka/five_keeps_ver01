@@ -1,0 +1,122 @@
+<div class="index-container">
+  <div class="header-outer">
+    <header class="index-header">
+      <div class="logo">
+        <%= link_to image_tag("5keeps.png", alt: "logo"), root_path %>
+      </div>
+      <div class="index-links">
+        <div class="language">
+          <span><%= t "static_pages.home.language" %></span>
+          <span class="material-icons" id="dropdown-icon">arrow_drop_down</span>
+          <ul class="dropdown-list">
+            <li><%= link_to "English", root_path(locale: :en) %></li>
+            <li><%= link_to "日本語", root_path(locale: :ja) %></li>
+          </ul>
+        </div>
+        <div class="login">
+          <span class="material-icons">person_outline</span>
+          <%= link_to t("dictionary.common.login"), login_path %>
+        </div>
+        <%= link_to t("dictionary.common.signup"), signup_path, class: "button" %>
+      </div>
+    </header>
+  </div>
+
+  <main class="index-main">
+    <section class="index-content top">
+      <h1>必要な情報を<br>
+            「サッと」呼び出す
+      </h1>
+      <p class="sub-title">シンプルを追求した、ブックマークアプリ</p>
+      <%= link_to "まずはお試し", guest_path, method: :post, class: "button" %>
+    </section>
+    
+    <section class="index-content how-to-use">
+      <h2>使い方</h2>
+      <p>
+          グループを5つまで作成でき、リンクをグループ毎に5つまで作成できます。
+          「今」必要な情報だけを保存することで、いつでも「サッと」呼び出せます。<br>
+        「まずはお試し」ボタンから、お試し用のページに移動できます。
+          無料の会員登録をして頂くと、作成したグループとリンクを保存できます。
+      </p>
+
+      <div class="carousel mobile">
+        <div class="slides">
+          <ul>
+            <li>
+              <div class="title">1. グループを作成</div>
+              <div class="container">
+                <%= image_tag("about_mb_01_ja.png", alt: "グループ作成のスクリーンショット") %>
+              </div>
+              <p>グループを5つまで作成できます。</p>
+            </li>
+            <li>
+              <div class="title">2. グループを選択</div>
+              <div class="container">
+                <%= image_tag("about_mb_02_ja.png", alt: "グループ選択のスクリーンショット") %>
+              </div>
+              <p>リンクを作成するグループを選択します。</p>
+            </li>
+            <li>
+              <div class="title">3. リンクを作成</div>
+              <div class="container">
+                <%= image_tag("about_mb_03_ja.png", alt: "リンク作成のスクリーンショット") %>
+              </div>
+              <p>リンクをグループ毎に5つまで作成できます。</p>
+            </li>
+          </ul>
+        </div>
+        
+        <button class="prev">
+          <span class="material-icons">arrow_back_ios</span>
+        </button>
+        <button class="next">
+          <span class="material-icons">arrow_forward_ios</span>              
+        </button>
+
+        <nav>
+        </nav>                   
+      </div>
+
+      <div class="carousel desktop">
+        <div class="slides">
+          <ul>
+            <li>
+              <div class="title">1. グループを作成</div>
+              <div class="container">
+                <%= image_tag("about_pc_01_ja.png", alt: "グループ作成のスクリーンショット") %>
+              </div>
+              <p>グループを5つまで作成できます。</p>
+            </li>
+            <li>
+              <div class="title">2. グループを選択</div>
+              <div class="container">
+                <%= image_tag("about_pc_02_ja.png", alt: "グループ選択のスクリーンショット") %>
+              </div>
+              <p>リンクを作成するグループを選択します。</p>
+            </li>
+            <li>
+              <div class="title">3. リンクを作成</div>
+              <div class="container">
+                <%= image_tag("about_pc_03_ja.png", alt: "リンク作成のスクリーンショット") %>
+              </div>
+              <p>リンクをグループ毎に5つまで作成できます。</p>
+            </li>
+          </ul>
+        </div>
+        
+        <button class="prev">
+          <span class="material-icons">arrow_back_ios</span>
+        </button>
+        <button class="next">
+          <span class="material-icons">arrow_forward_ios</span>              
+        </button>
+
+        <nav>
+        </nav>                   
+      </div>
+    </section>
+  </main>
+  <%= render 'static_pages/footer' %>
+</div>
+<%= javascript_pack_tag 'custom/home_not_logged_in' %>

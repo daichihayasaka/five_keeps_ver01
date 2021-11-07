@@ -1,0 +1,30 @@
+<li  id="link-<%= link.id %>">
+  <div class="title"><%= link.title %></div>
+
+  <span class="material-icons edit-icon"
+            style="font-size: 20px;"
+            data-id="<%= link.id %>"
+            data-title="<%= link.title %>"
+            data-url="<%= link.url %>">
+    edit
+  </span>
+
+  <%= link_to link.url , class: "link-url", target: :_blank, rel: "noopener noreferrer" do %>
+    <% if !link.ogp_image.blank? %>
+      <div class="ogp-image"
+            style="background-image: url(<%= link.ogp_image %>);" >
+      </div>
+    <% else %>
+      <div class="ogp-image default"><span class="material-icons">language</span></div>
+    <% end %>
+
+    <div class="ogp-others">
+      <div class="ogp-title">
+        <%= link.ogp_title if !link.ogp_title.blank?%>
+      </div>
+      <div class="ogp-url">
+        <%= link.ogp_url if !link.ogp_url.blank?%>
+      </div>
+    </div>
+  <% end %>
+</li>

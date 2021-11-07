@@ -1,0 +1,12 @@
+en:
+  password_resets:
+    create:
+      flash:
+        info: "Email sent with password reset instructions"
+        danger: "Email address not found"
+    update:
+      flash:
+        success: "Password has been reset."
+    check_expiration:
+      flash:
+        danger: "Password reset link has expired."

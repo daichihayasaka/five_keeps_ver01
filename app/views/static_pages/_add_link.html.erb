@@ -1,0 +1,7 @@
+<%= form_with(model: @link, local: false, id: "add-link", class: "hidden") do |f| %>
+  <div class="title"><%= t "dictionary.common.new_link" %></div>
+  <%= f.text_field :title, placeholder: t("dictionary.common.link_title"), class: "hidden" %>
+  <%= f.text_field :url, placeholder: "URL", class: "hidden" %>
+  <%= f.hidden_field :link_group_id %>
+  <%= f.submit t("dictionary.common.create"), class: "button hidden" %>
+<% end %>

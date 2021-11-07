@@ -1,0 +1,14 @@
+ja:
+  users:
+    create:
+      flash:
+        info: "送信メールを確認の上、アカウントの本登録を完了させてください。"
+    create_guest:
+      flash:
+        success: "ようこそ5Keepsへ！" 
+    update:
+      flash:
+        success: "アカウント情報が更新されました。"
+    destroy:
+      flash:
+        success: "アカウントの削除が完了しました。"

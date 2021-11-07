@@ -1,0 +1,12 @@
+ja:
+  password_resets:
+    create:
+      flash:
+        info: "パスワード再設定用のメールが送信されました。"
+        danger: "該当するメールアドレスがございません。"
+    update:
+      flash:
+        success: "パスワードの再設定が完了しました。"
+    check_expiration:
+      flash:
+        danger: "パスワード再設定用リンクの有効期限が切れてます。"

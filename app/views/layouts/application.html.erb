@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= display_meta_tags(default_meta_tags) %>
+    <meta content='ja_JP' property='og:locale'>
+    <meta content='en_US' property='og:locale:alternative'> 
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= favicon_link_tag('favicon.ico') %>
+    <%= favicon_link_tag 'apple-touch-icon.png', rel: "apple-touch-icon", type: "image/png"%>
+    <%= favicon_link_tag 'android-chrome-192x192.png', rel: "icon", type: "image/png" %>
+
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+  <div id="flash">
+    <%= render 'layouts/flash'%>
+  </div>
+    <%= yield %>
+    <%= debug(params) if Rails.env.development? %>
+  </body>
+</html>
