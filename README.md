@@ -2,7 +2,7 @@
 ※**日本語は[こちら](/README_ja.md)**  
  This is simple bookmark app. You can create up to 5 groups and 5 links per group. By keeping only the information you need now, you can quickly access to it. (https://www.5keeps.com/en)
 
-[![5Keeps_ogp_en](https://user-images.githubusercontent.com/72771511/141037698-e0e90d12-854a-4a50-aebf-142ccd588628.png)](https://www.5keeps.com/en)
+[![5Keeps_ogp_en](https://user-images.githubusercontent.com/72771511/141403434-cf260592-ac26-4091-b821-1e778948859c.jpg)](https://www.5keeps.com/en)
 
 ## Summary
 ### Issues to be solved
