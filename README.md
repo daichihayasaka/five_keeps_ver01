@@ -41,8 +41,7 @@ https://www.5keeps.com/en
 - switch language function（Japanese/ English）
 
 ## Details of guest-login function
-Create a temporary guest account that visitor can use to try the application. Later on visitor can sign up for a permanent account if they like it.
-I implement this guest-login function as below.
+When a visitor click on the 「Free Trial」 button, a temporary guest account is created, so that they can use this application just for a trial. Later on, the visitor can sign up for a permanent account if they like it. I implement this guest-login function as below.
 
 **1. Add a boolean guest attribute to the users table**
 （db/migrate/xxxx_add_guest_to_users.rb）
